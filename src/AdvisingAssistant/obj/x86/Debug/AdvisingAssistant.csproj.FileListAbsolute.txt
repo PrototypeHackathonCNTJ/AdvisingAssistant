@@ -3,3 +3,6 @@
 /Users/reagan/AdvisingAssistant/src/AdvisingAssistant/obj/x86/Debug/AdvisingAssistant.csproj.CoreCompileInputs.cache
 /Users/reagan/AdvisingAssistant/src/AdvisingAssistant/obj/x86/Debug/AdvisingAssistant.exe
 /Users/reagan/AdvisingAssistant/src/AdvisingAssistant/obj/x86/Debug/AdvisingAssistant.pdb
+/Users/reagan/AdvisingAssistant/src/AdvisingAssistant/obj/x86/Debug/AdvisingAssistant.csprojResolveAssemblyReference.cache
+/Users/reagan/AdvisingAssistant/src/AdvisingAssistant/bin/Debug/Newtonsoft.Json.dll
+/Users/reagan/AdvisingAssistant/src/AdvisingAssistant/bin/Debug/Newtonsoft.Json.xml
