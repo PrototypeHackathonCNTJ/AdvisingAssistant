@@ -39,7 +39,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Courses\Classification.cs" />
     <Compile Include="Courses\Course.cs" />
-    <Compile Include="Courses\Offering.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Courses\" />
