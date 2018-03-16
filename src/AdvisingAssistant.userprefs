@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{BF85F936-B6B4-4937-9D03-D3747BA0ADD9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="AdvisingAssistant/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AdvisingAssistant/Courses/Classification.cs">
     <Files>
-      <File FileName="AdvisingAssistant/Program.cs" Line="3" Column="29" />
-      <File FileName="AdvisingAssistant/Courses/Classification.cs" Line="3" Column="36" />
+      <File FileName="AdvisingAssistant/Program.cs" Line="3" Column="36" />
+      <File FileName="AdvisingAssistant/Courses/Classification.cs" Line="7" Column="23" />
+      <File FileName="AdvisingAssistant/Courses/Course.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />

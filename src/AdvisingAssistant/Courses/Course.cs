@@ -1,5 +1,6 @@
 ﻿using System;
-namespace AdvisingAssistant
+
+namespace AdvisingAssistant.Courses
 {
     public class Course
     {
