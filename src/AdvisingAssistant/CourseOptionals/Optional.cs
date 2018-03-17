@@ -60,7 +60,7 @@ namespace AdvisingAssistant.CourseOptionals
                 if (c.ToLower() == course.ToLower())
                 {
                     ChosenCourses.Add(c);
-                    ChosenCredits += Course.GetCourseByName(c).Credits;
+                    ChosenCredits += Course.GetCourseByID(c).Credits;
                     return ChosenCredits >= Credits;
                 }
             }

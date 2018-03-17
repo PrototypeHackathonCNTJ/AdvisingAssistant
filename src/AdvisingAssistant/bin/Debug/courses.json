@@ -107,7 +107,7 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 2340",
+  "id": "COMPUTER 2430",
   "name": "Object-Oriented Programming and Data Structures I",
   "prereqs": [ "COMPUTER 1430" ],
   "coreqs": [ ],
@@ -1039,24 +1039,6 @@
   "classification":["GENDER_STUDY", "SOCIAL_SCIENCE"]
 }
 {
-  "id": "BUSADMIN 1300",
-  "name": "Global Business",
-  "prereqs":[],
-  "coreqs":[],
-  "prereqStanding":"",
-  "credits":"3",
-  "info":"This course will survey current issues and trends in global business. Specific emphasis will be placed on the impact of these trends on managers in the multinational organizational setting. Topics include a study of the economic, financial and legal environments of international business. In addition, trade issues and corporate strategies will be discussed.",
-  "offerFall":"true",
-  "offerFallOdd":"false",
-  "offerFallEven":"false",
-  "offerSpring":"true",
-  "offerSpringOdd":"false",
-  "offerSpringEven":"false",
-  "offerSummer":"false",
-  "offerWinter":"false",
-  "classification":["INTERNATIONAL_ED"]
-}
-{
   "id": "POLISCI 2940",
   "name": "The Political Economy of Race, Gender and Ethnicity",
   "prereqs":[],
@@ -1148,7 +1130,7 @@
 }{
    "id": "MATH 2640",
    "name": "Calculus and Analytic Geometry I",
-   "prereqs": [ ],
+   "prereqs": [ "MATH 2450" ],
    "coreqs": [ ],
    "prereqStanding": "",
    "credits": "4",
@@ -1166,7 +1148,7 @@
 {
   "id": "MATH 2730",
   "name": "Discrete Mathematics",
-  "prereqs": [ ],
+  "prereqs": [ "MATH 2640" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",

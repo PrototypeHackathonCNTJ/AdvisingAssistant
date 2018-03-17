@@ -8,7 +8,7 @@ namespace AdvisingAssistant.Courses
     public class Course
     {
         public static Dictionary<string, Course> Courses = new Dictionary<string, Course>();
-        public static Course GetCourseByName(string name)
+        public static Course GetCourseByID(string name)
         {
             if (!Courses.ContainsKey(name))
                 return null;
@@ -26,7 +26,7 @@ namespace AdvisingAssistant.Courses
 				json = json.Substring(nextEndBrace + 1);
                 Course c = new Course(obj);
                 if (!Courses.ContainsKey(c.Name))
-                    Courses.Add(c.Name, c);
+                    Courses.Add(c.ID, c);
 			}
         }
 
@@ -65,6 +65,23 @@ namespace AdvisingAssistant.Courses
             OfferSummer = json.offerSummer;
             OfferWinter = json.offerWinter;
             Classifications = ParseClassifications(json.classification.ToObject<string[]>());
+        }
+
+        public int GetPrereqLayers()
+        {
+            int highestLater = 0;
+
+            if (Prereqs.Length == 0) return 0;
+
+            foreach (var prereq in Prereqs)
+            {
+                Course c = GetCourseByID(prereq);
+                int subLayers = c.GetPrereqLayers();
+                if (highestLater < subLayers)
+                    highestLater = subLayers;
+            }
+
+            return highestLater + 1;
         }
 
         public static Classification[] ParseClassifications(string[] classes)

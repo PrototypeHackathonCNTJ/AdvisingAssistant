@@ -20,7 +20,11 @@ namespace AdvisingAssistant.Courses
             Course.ReadCoursesFromFile("courses.json");
             Optional.ReadOptionalsFromFile("options.json");
             Major.ReadMajorsFromFile("major.json");
-            Application.Run(new ConfigurationForm());
+
+            Course oops2 = Course.GetCourseByID("COMPUTER 3630");
+            Console.WriteLine("{0}\n", oops2.GetPrereqLayers());
+
+            //Application.Run(new ConfigurationForm());
         }
     }
 }

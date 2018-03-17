@@ -52,6 +52,8 @@
     <Compile Include="Majors\Major.cs" />
     <Compile Include="CourseOptionals\Optional.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="ScheduleBuilder\Schedule.cs" />
+    <Compile Include="ScheduleBuilder\Semester.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UI\ConfigurationForm.resx">
@@ -60,6 +62,7 @@
     <Folder Include="Courses\" />
     <Folder Include="Majors\" />
     <Folder Include="CourseOptionals\" />
+    <Folder Include="ScheduleBuilder\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

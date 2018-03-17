@@ -24,7 +24,7 @@ namespace AdvisingAssistant
             Major = Major.GetMajorByName(major);
 
             foreach (string courseID in Major.CoreRequirements)
-                ChosenCourses.Add(courseID, Course.GetCourseByName(courseID));
+                ChosenCourses.Add(courseID, Course.GetCourseByID(courseID));
 
             var optionals = new List<Optional>();
             foreach (string courseID in Major.Options)
@@ -42,7 +42,7 @@ namespace AdvisingAssistant
         {
             foreach (var courseID in opt.ChosenCourses)
                 if (!ChosenCourses.ContainsKey(courseID))
-                    ChosenCourses.Add(courseID, Course.GetCourseByName(courseID));
+                    ChosenCourses.Add(courseID, Course.GetCourseByID(courseID));
         }
     }
 }
