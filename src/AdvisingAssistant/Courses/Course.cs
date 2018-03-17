@@ -7,6 +7,12 @@ namespace AdvisingAssistant.Courses
     public class Course
     {
         public static Dictionary<string, Course> Courses = new Dictionary<string, Course>();
+        public static Course GetCourseByName(string name)
+        {
+            if (!Courses.ContainsKey(name))
+                return null;
+            return Courses[name];
+        }
 
         public string ID { get; private set; }
         public string Name { get; private set; }

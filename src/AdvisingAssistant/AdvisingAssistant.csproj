@@ -39,9 +39,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Courses\Classification.cs" />
     <Compile Include="Courses\Course.cs" />
+    <Compile Include="Majors\Major.cs" />
+    <Compile Include="PlanGenerator.cs" />
+    <Compile Include="CourseOptionals\Optional.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Courses\" />
+    <Folder Include="Majors\" />
+    <Folder Include="CourseOptionals\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
