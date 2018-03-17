@@ -1,0 +1,37 @@
+{
+  "id": "MATH 2450",
+  "name": "Precalculus",
+  "prereqs": [],
+  "coreqs": [ ],
+  "prereqStanding":"",
+  "credits":"5",
+  "info":"Solving equations and inequalities, functions and their graphs, polynomial and rational functions, exponential and logarithmic functions, trigonometric and inverse trigonometric functions, trigonometric identities and formulas, complex numbers, systems of equations, and conic sections. This course is equivalent to taking both Math 1530 and Math 2530. Students who have credit for Math 1530 or Math 2530 should not take Math 2450.",
+  "offerFall":"true",
+  "offerFallOdd":"false",
+  "offerFallEven":"false",
+  "offerSpring":"true",
+  "offerSpringOdd":"false",
+  "offerSpringEven":"false",
+  "offerSummer":"true",
+  "offerWinter":"false",
+  "classification" : [ ]
+}
+
+{
+  "id": "COMPUTER 3630",
+  "name": "Database Design and Implementation",
+  "prereqs": ["COMPUTER 2430", "MATH 2730"],
+  "coreqs": [ ],
+  "prereqStanding":"",
+  "credits":"3",
+  "info":"This course will explore fundamental concepts necessary for the design, use, and implementation of database systems. Study of database modeling and design, languages and facilities provided by the database management systems, and techniques for implementing database systems will be examined. Major database models will be discussed with primary focus on the relational database model and query languages.",
+  "offerFall":"false",
+  "offerFallOdd":"false",
+  "offerFallEven":"false",
+  "offerSpring":"true",
+  "offerSpringOdd":"false",
+  "offerSpringEven":"false",
+  "offerSummer":"false",
+  "offerWinter":"false",
+  "classification" : [ ]
+}
