@@ -9,7 +9,6 @@ namespace AdvisingAssistant.ScheduleBuilder
 {
     public class Schedule
     {
-        public const int SEMESTER_CREDITS = 0xF;
 
         public static void TestSchedule()
         {
@@ -19,23 +18,29 @@ namespace AdvisingAssistant.ScheduleBuilder
             Schedule schedule = new Schedule(cole, Term.Spring);
             schedule.generateOrderedCourses();
 
-            for (int i = 0; i < schedule.layerOrderedCourses.Length; i++)
+            for (int i = 0; i < schedule.layerOrderedCourses.Count; i++)
                 Console.WriteLine(schedule.layerOrderedCourses[i].ID);
 
+			schedule.GenerateSemesters();
+
             for (int i = 0; i < schedule.Semesters.Length; i++)
+            {
                 Console.WriteLine("{0} {1}", schedule.Semesters[i].SchedulePosition, schedule.Semesters[i].Term);
+                foreach (var course in schedule.Semesters[i].Courses)
+                    Console.WriteLine("\t{0}", course.Value.ID);
+            }
+
         }
 
         public Semester[] Semesters { get; private set; }
 
         public User User { get; private set; }
 
-        private Course[] layerOrderedCourses;
-        private Term startingTerm;
+        private List<Course> layerOrderedCourses;
 
         public Schedule(User user, Term startingTerm)
         {
-            Semesters = new Semester[8];
+            Semesters = new Semester[80];
 
             Term term = startingTerm;
             for (int i = 0; i < Semesters.Length; i++)
@@ -49,12 +54,44 @@ namespace AdvisingAssistant.ScheduleBuilder
 
         public void GenerateSemesters()
         {
-            int layeredOrderedCoursesIndex = 0;
-            for (int i = Semesters.Length - 1; i >= 0; i--)
+            var courses = layerOrderedCourses.ToArray();
+            for (int i = 0; i < courses.Length; i++)
             {
-                var semester = Semesters[i];
-                //semester.AddCourse();
+                var course = courses[i];
+                addCourseToNextAvailable(course);
+                generateSemestersProreq(course);
             }
+        }
+        private void generateSemestersProreq(Course course)
+        {
+            foreach (var proreq in course.Proreqs)
+            {
+                var c = Course.GetCourseByID(proreq);
+                if (!layerOrderedCourses.Contains(c)) continue;
+                addCourseToFollowingAvailable(c);
+                generateSemestersProreq(c);
+            }
+        }
+
+        private void addCourseToNextAvailable(Course course)
+        {
+            if (!User.TakingCourse(course) || !layerOrderedCourses.Contains(course)) return;
+            Semesters[nextAvailableSemesterIndex()].AddCourse(course);
+            layerOrderedCourses.Remove(course);
+        }
+        private void addCourseToFollowingAvailable(Course course)
+        {
+            if (!User.TakingCourse(course) || !layerOrderedCourses.Contains(course)) return;
+            Semesters[nextAvailableSemesterIndex() + 1].AddCourse(course);
+            layerOrderedCourses.Remove(course);
+        }
+
+        private int nextAvailableSemesterIndex()
+        {
+            for (int i = 0; i < Semesters.Length; i++)
+                if (!Semesters[i].IsFilled())
+                    return i;
+            return -1;
         }
 
         public Semester GetEnrolledSemester(string course)
@@ -87,12 +124,11 @@ namespace AdvisingAssistant.ScheduleBuilder
                 courseCount++;
             }
 
-            layerOrderedCourses = new Course[courseCount];
-            int layeredOrderedCoursesIndex = 0;
-            for (int i = highestLayerCount; i >= 0; i--)
+            layerOrderedCourses = new List<Course>();
+            for (int i = 0; i < highestLayerCount; i++)
                 if (orderedCourses.ContainsKey(i))
                     foreach (var course in orderedCourses[i])
-                        layerOrderedCourses[layeredOrderedCoursesIndex++] = course;
+                        layerOrderedCourses.Add(course);
         }
     }
 }

@@ -44,5 +44,14 @@ namespace AdvisingAssistant
                 if (!ChosenCourses.ContainsKey(courseID))
                     ChosenCourses.Add(courseID, Course.GetCourseByID(courseID));
         }
+
+        public bool TakingCourse(string id)
+        {
+            return TakingCourse(Course.GetCourseByID(id));
+        }
+        public bool TakingCourse(Course course)
+        {
+            return ChosenCourses.ContainsValue(course);
+        }
     }
 }
