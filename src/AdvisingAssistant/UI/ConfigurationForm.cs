@@ -20,6 +20,7 @@ namespace AdvisingAssistant.UI
       List<Button> disciplineButtons = new List<Button>();
       List<Button> optionals = new List<Button>();
       User user = new User();
+
       public ConfigurationForm()
       {
          InitializeComponent();
@@ -51,13 +52,14 @@ namespace AdvisingAssistant.UI
             btn.Location = new Point(centerGroupBox.Location.X + 10 + i * BUTTON_SIZE, centerGroupBox.Location.Y + 10);
             btn.Click += new EventHandler(Major_Click);
             btn.Show();
-            centerGroupBox.Controls.Add(btn);
-            this.Controls.Add(btn);
+            panelMain.Controls.Add(btn);
             majorButtons.Add(btn);
          }
       }
+
       private void Show_Discipline()
       {
+         int groupBoxWidth = groupBoxCenter.Width -(groupBoxCenter.Width % BUTTON_SIZE);//Multiple of button size
          for (int i = 0; i < Course.Courses.Count; i++)
          {
             Button btn = new Button();
@@ -65,15 +67,13 @@ namespace AdvisingAssistant.UI
             btn.Name = "btn_" + name;
             btn.Text = Course.Courses.Keys.ElementAt(i) + "\n" + name;
 
-
             btn.BackColor = Color.White;
             btn.Width = BUTTON_SIZE;
             btn.Height = BUTTON_SIZE;
-            btn.Location = new Point(centerGroupBox.Location.X + 10 + (i * BUTTON_SIZE) % centerGroupBox.Width, centerGroupBox.Location.Y  + centerGroupBox.Location.Y / centerGroupBox.Height + 10);
+            btn.Location = new Point((i * BUTTON_SIZE) % groupBoxWidth, ((i * BUTTON_SIZE) / groupBoxWidth) * BUTTON_SIZE);
             btn.Click += new EventHandler(Discipline_Click);
             btn.Show();
-            centerGroupBox.Controls.Add(btn);
-            this.Controls.Add(btn);
+            panelMain.Controls.Add(btn);
             disciplineButtons.Add(btn);
          }
       }
@@ -106,18 +106,27 @@ namespace AdvisingAssistant.UI
          {
             b.Dispose();
          }
-         majorButtons.Clear();
-         centerGroupBox.Controls.Clear();
 
-         centerGroupBox.Location = new Point(this.Width / 4, this.Height / 4);
-         centerGroupBox.ForeColor = Color.Black;
-         centerGroupBox.Width = this.Width / 2;
-         centerGroupBox.Height = this.Height / 2;
-         centerGroupBox.Anchor = AnchorStyles.Top;
-         centerGroupBox.Anchor = AnchorStyles.Bottom;
-         centerGroupBox.Anchor = AnchorStyles.Right;
-         centerGroupBox.Anchor = AnchorStyles.Left;
-         centerGroupBox.Show();
+         foreach (Button b in disciplineButtons)
+         {
+            b.Dispose();
+         }
+
+         disciplineButtons.Clear();
+         majorButtons.Clear();
+         panelMain.Controls.Clear();
+
+         groupBoxCenter.Location = new Point(this.Width / 4, this.Height / 4);
+         groupBoxCenter.ForeColor = Color.Black;
+         groupBoxCenter.Width = this.Width / 2;
+         groupBoxCenter.Height = this.Height / 2;
+         groupBoxCenter.Show();
+
+         panelMain.Location = new Point(0, 0);
+         panelMain.ForeColor = Color.Black;
+         panelMain.Width = groupBoxCenter.Width;
+         panelMain.Height = groupBoxCenter.Height;
+         panelMain.Show();
 
          Show_Majors();
       }
