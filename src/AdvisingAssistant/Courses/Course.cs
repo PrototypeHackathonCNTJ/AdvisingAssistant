@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 
 using Newtonsoft.Json;
 
@@ -12,6 +13,21 @@ namespace AdvisingAssistant.Courses
             if (!Courses.ContainsKey(name))
                 return null;
             return Courses[name];
+        }
+
+        public static void ReadCoursesFromFile(string path)
+        {
+            string json = File.ReadAllText(path);
+
+			while (json.IndexOf('}') != -1)
+			{
+				int nextEndBrace = json.IndexOf('}');
+				string obj = json.Substring(0, nextEndBrace + 1);
+				json = json.Substring(nextEndBrace + 1);
+                Course c = new Course(obj);
+                if (!Courses.ContainsKey(c.Name))
+                    Courses.Add(c.Name, c);
+			}
         }
 
         public string ID { get; private set; }
@@ -49,9 +65,6 @@ namespace AdvisingAssistant.Courses
             OfferSummer = json.offerSummer;
             OfferWinter = json.offerWinter;
             Classifications = ParseClassifications(json.classification.ToObject<string[]>());
-
-            if (!Courses.ContainsKey(ID))
-                Courses.Add(ID, this);
         }
 
         public static Classification[] ParseClassifications(string[] classes)

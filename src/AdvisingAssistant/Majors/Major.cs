@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 using Newtonsoft.Json;
 
@@ -13,6 +14,21 @@ namespace AdvisingAssistant.Majors
             if (!Majors.ContainsKey(name))
                 return null;
             return Majors[name];
+        }
+
+        public static void ReadMajorsFromFile(string path)
+        {
+			string json = File.ReadAllText(path);
+
+			while (json.IndexOf('}') != -1)
+			{
+				int nextEndBrace = json.IndexOf('}');
+				string obj = json.Substring(0, nextEndBrace + 1);
+				json = json.Substring(nextEndBrace + 1);
+                Major m = new Major(obj);
+				if (!Majors.ContainsKey(m.Name))
+					Majors.Add(m.Name, m);
+			}
         }
 
         public string Name { get; private set; }

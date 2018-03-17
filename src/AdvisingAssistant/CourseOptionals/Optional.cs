@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 using AdvisingAssistant.Courses;
 
@@ -15,6 +16,21 @@ namespace AdvisingAssistant.CourseOptionals
             if (!Optionals.ContainsKey(name))
                 return null;
             return Optionals[name];
+        }
+
+        public static void ReadOptionalsFromFile(string path)
+        {
+			string json = File.ReadAllText(path);
+
+			while (json.IndexOf('}') != -1)
+			{
+				int nextEndBrace = json.IndexOf('}');
+				string obj = json.Substring(0, nextEndBrace + 1);
+				json = json.Substring(nextEndBrace + 1);
+                Optional o = new Optional(obj);
+                if (!Optionals.ContainsKey(o.Name))
+                    Optionals.Add(o.Name, o);
+			}
         }
 
         public string Name { get; private set; }
@@ -33,9 +49,6 @@ namespace AdvisingAssistant.CourseOptionals
 
             ChosenCourses = new List<string>();
             ChosenCredits = 0;
-
-            if (!Optionals.ContainsKey(Name))
-                Optionals.Add(Name, this);
         }
 
         public bool Choose(string course)

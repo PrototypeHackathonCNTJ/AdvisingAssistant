@@ -54,19 +54,15 @@
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <EmbeddedResource Include="UI\ConfigurationForm.resx">
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
     </EmbeddedResource>
-=======
     <Folder Include="Courses\" />
     <Folder Include="Majors\" />
     <Folder Include="CourseOptionals\" />
-    <Folder Include="New Folder\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
->>>>>>> d9b732f806c7275451288a04a8f00cb6797e86a3
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
