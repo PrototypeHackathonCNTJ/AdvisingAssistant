@@ -6,3 +6,5 @@
 /Users/reagan/AdvisingAssistant/src/AdvisingAssistant/obj/x86/Debug/AdvisingAssistant.csprojResolveAssemblyReference.cache
 /Users/reagan/AdvisingAssistant/src/AdvisingAssistant/bin/Debug/Newtonsoft.Json.dll
 /Users/reagan/AdvisingAssistant/src/AdvisingAssistant/bin/Debug/Newtonsoft.Json.xml
+C:\Users\timot\Desktop\AdvisingAssistant\src\AdvisingAssistant\obj\x86\Debug\AdvisingAssistant.exe
+C:\Users\timot\Desktop\AdvisingAssistant\src\AdvisingAssistant\obj\x86\Debug\AdvisingAssistant.pdb
