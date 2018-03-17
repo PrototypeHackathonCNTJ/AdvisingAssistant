@@ -51,19 +51,15 @@
     <Compile Include="Majors\Major.cs" />
     <Compile Include="CourseOptionals\Optional.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="ScheduleBuilder\Schedule.cs" />
-    <Compile Include="ScheduleBuilder\Semester.cs" />
-    <Compile Include="ScheduleBuilder\Term.cs" />
+    <Compile Include="UI\ScheduleBuilder\Schedule.cs" />
+    <Compile Include="UI\ScheduleBuilder\Semester.cs" />
+    <Compile Include="UI\ScheduleBuilder\Term.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UI\ConfigurationForm.resx">
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <Folder Include="Courses\" />
-    <Folder Include="Majors\" />
-    <Folder Include="CourseOptionals\" />
-    <Folder Include="ScheduleBuilder\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

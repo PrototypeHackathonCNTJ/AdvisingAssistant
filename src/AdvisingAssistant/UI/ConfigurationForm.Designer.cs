@@ -1,6 +1,6 @@
 ﻿namespace AdvisingAssistant.UI
 {
-   partial class disciplineName
+   partial class ConfigurationForm
    {
       /// <summary>
       /// Required designer variable.
@@ -42,28 +42,27 @@
          this.groupBoxCenter.Controls.Add(this.panelMain);
          this.groupBoxCenter.Location = new System.Drawing.Point(24, 36);
          this.groupBoxCenter.Name = "groupBoxCenter";
-         this.groupBoxCenter.Size = new System.Drawing.Size(936, 995);
+         this.groupBoxCenter.Size = new System.Drawing.Size(225, 243);
          this.groupBoxCenter.TabIndex = 0;
          this.groupBoxCenter.TabStop = false;
-         this.groupBoxCenter.Text = "Center Box";
          // 
          // panelMain
          // 
          this.panelMain.AutoScroll = true;
          this.panelMain.Location = new System.Drawing.Point(41, 71);
          this.panelMain.Name = "panelMain";
-         this.panelMain.Size = new System.Drawing.Size(766, 644);
+         this.panelMain.Size = new System.Drawing.Size(122, 123);
          this.panelMain.TabIndex = 0;
          // 
          // disciplineGroupBox
          // 
          this.disciplineGroupBox.Controls.Add(this.label1);
-         this.disciplineGroupBox.Location = new System.Drawing.Point(1089, 36);
+         this.disciplineGroupBox.Location = new System.Drawing.Point(301, 49);
          this.disciplineGroupBox.Name = "disciplineGroupBox";
-         this.disciplineGroupBox.Size = new System.Drawing.Size(746, 963);
+         this.disciplineGroupBox.Size = new System.Drawing.Size(228, 220);
          this.disciplineGroupBox.TabIndex = 1;
          this.disciplineGroupBox.TabStop = false;
-         this.disciplineGroupBox.Text = "Choose Discipline";
+         this.disciplineGroupBox.Visible = false;
          // 
          // label1
          // 
@@ -76,8 +75,7 @@
          // 
          // btnNext
          // 
-         this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-         this.btnNext.Location = new System.Drawing.Point(1388, 1053);
+         this.btnNext.Location = new System.Drawing.Point(33, 307);
          this.btnNext.Name = "btnNext";
          this.btnNext.Size = new System.Drawing.Size(496, 175);
          this.btnNext.TabIndex = 2;
@@ -85,7 +83,7 @@
          this.btnNext.UseVisualStyleBackColor = true;
          this.btnNext.Click += new System.EventHandler(this.Class_Click);
          // 
-         // disciplineName
+         // ConfigurationForm
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,7 +91,7 @@
          this.Controls.Add(this.btnNext);
          this.Controls.Add(this.disciplineGroupBox);
          this.Controls.Add(this.groupBoxCenter);
-         this.Name = "disciplineName";
+         this.Name = "ConfigurationForm";
          this.Text = "ConfigurationForm";
          this.Load += new System.EventHandler(this.ConfigurationForm_Load);
          this.Resize += new System.EventHandler(this.ConfigurationForm_Resize);

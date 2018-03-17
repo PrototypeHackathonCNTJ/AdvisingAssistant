@@ -12,30 +12,36 @@ using AdvisingAssistant.CourseOptionals;
 
 namespace AdvisingAssistant.UI
 {
-   public partial class disciplineName : Form
+   public partial class ConfigurationForm : Form
    {
       private enum state { SELECT_MAJOR, COMPLETED_COURSES, SELECT_DISCIPLINE, SELECT_OPTIONALS }
       private state currentState = 0;
       const int BUTTON_SIZE = 125;
       List<String> majors = new List<String>();
       Tuple<string[], Optional[]> selectedMajor;
+      int currentOption = 0;
       GroupBox centerGroupBox = new GroupBox();
       List<Button> completedClasses = new List<Button>();
       List<Button> majorButtons = new List<Button>();
       List<RadioButton> disciplineButtons = new List<RadioButton>();
-      List<Button> optionals = new List<Button>();
+      List<CheckBox> optionals = new List<CheckBox>();
       User user = new User();
 
-      public disciplineName()
+      public ConfigurationForm()
       {
          InitializeComponent();
          disciplineGroupBox.Hide();
          centerGroupBox.Name = "pnl_majors";
          centerGroupBox.BackColor = Color.Blue;
          centerGroupBox.Show();
-         majors.Add("Software Engineering");
-         majors.Add("Computer Information Systems");
-         majors.Add("Computer Information Technology");
+
+         for(int i = 0; i < Major.Majors.Count; i++)
+         {
+            String name = Major.Majors.Values.ElementAt(i).Name;
+            majors.Add(name);
+         }
+
+         this.WindowState = FormWindowState.Maximized;
       }
 
       private void ConfigurationForm_Load(object sender, EventArgs e)
@@ -46,6 +52,7 @@ namespace AdvisingAssistant.UI
       private void Show_Majors()
       {
          panelMain.Show();
+         btnNext.Hide();
          for (int i = 0; i < majors.Count; i++)
          {
             Button btn = new Button();
@@ -66,6 +73,9 @@ namespace AdvisingAssistant.UI
 
       private void Show_All_Classes()
       {
+         btnNext.Show();
+         btnNext.Location = new Point(groupBoxCenter.Location.X + groupBoxCenter.Width - BUTTON_SIZE,
+            groupBoxCenter.Location.Y + groupBoxCenter.Height);
          panelMain.Show();
          int groupBoxWidth = groupBoxCenter.Width -(groupBoxCenter.Width % BUTTON_SIZE);//Multiple of button size
          for (int i = 0; i < Course.Courses.Count; i++)
@@ -79,7 +89,7 @@ namespace AdvisingAssistant.UI
             btn.Width = BUTTON_SIZE;
             btn.Height = BUTTON_SIZE;
             btn.Location = new Point((i * BUTTON_SIZE) % groupBoxWidth, ((i * BUTTON_SIZE) / groupBoxWidth) * BUTTON_SIZE);
-            btn.Click += new EventHandler(Class_Click);
+            btn.Click += new EventHandler(Class_Selection);
             btn.Show();
             panelMain.Controls.Add(btn);
             completedClasses.Add(btn);
@@ -88,10 +98,16 @@ namespace AdvisingAssistant.UI
 
       private void Show_Disciplines()
       {
+         disciplineGroupBox.Location = new Point(this.Width / 4, this.Height / 4);
+         disciplineGroupBox.ForeColor = Color.Black;
+         disciplineGroupBox.Width = this.Width / 2;
+         disciplineGroupBox.Height = this.Height / 2;
          disciplineGroupBox.Show();
-         btnNext.Show();
+         centerGroupBox.Hide();
+         btnNext.Hide();
          RadioButton cb;
-         for (int i = 0; i < selectedMajor.Item1.Count(); i++)
+         int i;
+         for (i = 0; i < selectedMajor.Item1.Count(); i++)
          {
             cb = new RadioButton();
             cb.Text = selectedMajor.Item1[i];
@@ -102,12 +118,91 @@ namespace AdvisingAssistant.UI
             disciplineGroupBox.Controls.Add(cb);
             disciplineButtons.Add(cb);
          }
+         Button btn = new Button();
+
+         btn.Width = 125;
+         btn.Height = 75;
+         btn.Text = "Next";
+         btn.Location = new Point(10, 50 + (i + 2) * 50);
+         btn.Click += new EventHandler(Discipline_Click);
+         disciplineGroupBox.Controls.Add(btn);
+         btn.Show();
+      }
+
+      private void Show_Optionals()
+      {
+         disciplineGroupBox.Location = new Point(this.Width / 4, this.Height / 4);
+         disciplineGroupBox.ForeColor = Color.Black;
+         disciplineGroupBox.Width = this.Width / 2;
+         disciplineGroupBox.Height = this.Height / 2;
+         disciplineGroupBox.Show();
+         Optional econ = Optional.GetOptionalByName("SOFTWARE ECON");
+         label1.Text = "Select " + selectedMajor.Item2[currentOption].Credits + " credits of the following.";
+         label1.Show();
+         disciplineGroupBox.Controls.Add(label1);
+
+         int i;
+         for (i = 0; i < selectedMajor.Item2[currentOption].Courses.Length; i++)
+         {
+            CheckBox cb = new CheckBox();
+            cb.Width = disciplineGroupBox.Width / 2;
+            string name = selectedMajor.Item2[currentOption].Courses[i];
+            string creditCount = " (" + Course.GetCourseByID(name).Credits + ")";
+            cb.Text = name + creditCount;
+            cb.Location = new Point(25, (i + 1) * 50);
+            disciplineGroupBox.Controls.Add(cb);
+            cb.Show();
+         }
+         Button btn = new Button();
+         btn.Width = 125;
+         btn.Height = 75;
+         btn.Text = "Next";
+         btn.Location = new Point(disciplineGroupBox.Width - 135, disciplineGroupBox.Height - 85);
+         btn.Click += new EventHandler(Optional_Click);
+         disciplineGroupBox.Controls.Add(btn);
+         btn.Show();
+      }
+
+      private void Show_Missing_Optionals()
+      {
+         disciplineGroupBox.Location = new Point(this.Width / 4, this.Height / 4);
+         disciplineGroupBox.ForeColor = Color.Black;
+         disciplineGroupBox.Width = this.Width / 2;
+         disciplineGroupBox.Height = this.Height / 2;
+         disciplineGroupBox.Show();
+         Optional econ = Optional.GetOptionalByName("SOFTWARE ECON");
+         label1.Text = "Select " + selectedMajor.Item2[currentOption].Credits + " credits of the following.";
+         label1.Show();
+         disciplineGroupBox.Controls.Add(label1);
+
+         int i;
+         for (i = 0; i < selectedMajor.Item2[currentOption].Courses.Length; i++)
+         {
+            CheckBox cb = new CheckBox();
+            cb.Width = disciplineGroupBox.Width / 2;
+            string name = selectedMajor.Item2[currentOption].Courses[i];
+            string creditCount = " (" + Course.GetCourseByID(name).Credits + ")";
+            cb.Text = name + creditCount;
+            cb.Location = new Point(25, (i + 1) * 50);
+            disciplineGroupBox.Controls.Add(cb);
+            cb.Show();
+         }
+         Button btn = new Button();
+         btn.Width = 125;
+         btn.Height = 75;
+         btn.Text = "Next";
+         btn.Location = new Point(disciplineGroupBox.Width - 135, disciplineGroupBox.Height - 85);
+         btn.Click += new EventHandler(Optional_Click);
+         disciplineGroupBox.Controls.Add(btn);
+         btn.Show();
       }
 
       private void Major_Click(object sender, EventArgs e)
       {
          Button btn = (Button)sender;
          selectedMajor = user.ChooseMajor(btn.Text.ToString());
+         foreach (var optionalTheUserNeedsToSee in selectedMajor.Item2)
+            ;//Show the user their optional and ask them to choose their courses from it.
 
          foreach (Button b in majorButtons)
             b.Dispose();
@@ -130,9 +225,76 @@ namespace AdvisingAssistant.UI
          completedClasses.Clear();
          centerGroupBox.Controls.Clear();
          panelMain.Hide();
+         centerGroupBox.Hide();
 
          currentState++;
          Show_Disciplines();
+      }
+
+      private void Discipline_Click(object sender, EventArgs e)
+      {
+         foreach (RadioButton b in disciplineButtons)
+            b.Dispose();
+
+         disciplineButtons.Clear();
+         disciplineGroupBox.Controls.Clear();
+         panelMain.Hide();
+         centerGroupBox.Hide();
+
+         currentState++;
+         Show_Optionals();
+      }
+
+      private void Optional_Click(object sender, EventArgs e)
+      {
+         foreach (CheckBox b in optionals)
+            b.Dispose();
+
+         optionals.Clear();
+         disciplineGroupBox.Controls.Clear();
+         panelMain.Hide();
+         centerGroupBox.Hide();
+         if (currentOption < selectedMajor.Item2.Count() - 1)
+         {
+            currentOption++;
+            Show_Optionals();
+         }
+         else
+         {
+            //move onto scheduke display
+         }
+      }
+
+      private void Select_Class(object sender, EventArgs e)
+      {
+         CheckBox cb = (CheckBox)sender;
+
+         optionals.Clear();
+         disciplineGroupBox.Controls.Clear();
+         panelMain.Hide();
+         centerGroupBox.Hide();
+         if (currentOption < selectedMajor.Item2.Count() - 1)
+         {
+            currentOption++;
+            Show_Optionals();
+         }
+         else
+         {
+            //move onto schedule display
+         }
+      }
+
+      private void Class_Selection(object sender, EventArgs e)
+      {
+         Button btn = (Button)sender;
+         if (btn.BackColor == Color.White)
+         {
+            btn.BackColor = Color.Blue;
+         }
+         else
+         {
+            btn.BackColor = Color.White;
+         }
       }
 
       private void ConfigurationForm_Resize(object sender, EventArgs e)
@@ -163,7 +325,9 @@ namespace AdvisingAssistant.UI
          panelMain.Height = groupBoxCenter.Height;
          panelMain.Show();
 
-         if(currentState == state.SELECT_MAJOR)
+         btnNext.Location = new Point(groupBoxCenter.Location.X + groupBoxCenter.Width - BUTTON_SIZE, groupBoxCenter.Location.Y + groupBoxCenter.Height);
+
+         if (currentState == state.SELECT_MAJOR)
             Show_Majors();
          else if (currentState == state.COMPLETED_COURSES)
             Show_All_Classes();
