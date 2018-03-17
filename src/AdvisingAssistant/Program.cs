@@ -23,10 +23,10 @@ namespace AdvisingAssistant.Courses
                 string obj = json.Substring(0, nextEndBrace + 1);
                 json = json.Substring(nextEndBrace + 1);
 
-                Course c = new Course(obj);
+                Optional c = new Optional(obj);
                 Console.WriteLine(c.Name);
                 //Console.WriteLine(c.Credits);
-                Console.WriteLine(c.Info);
+                //Console.WriteLine(c.Info);
                 Console.WriteLine();
             }
         }
