@@ -38,11 +38,12 @@ namespace AdvisingAssistant.ScheduleBuilder
         }
         public bool AddCourse(string name, Course course)
         {
+            if (IsFilled()) return false;
             if (!Courses.ContainsKey(name))
             {
                 Courses.Add(name, course);
                 takenCredits += course.Credits;
-                return takenCredits < SEMESTER_CREDITS;
+                return IsFilled();
             }
             return false;
         }

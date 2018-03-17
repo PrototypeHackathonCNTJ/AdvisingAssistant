@@ -123,18 +123,14 @@ namespace AdvisingAssistant.Courses
 		/// <param name="user">User.</param>
 		public bool Validate(Semester semester, Schedule schedule, User user)
 		{
-			if ((semester.Term == Term.Fall && !OfferFall) ||
-				(semester.Term == Term.Spring && !OfferSpring))
-				return false;
-
-			foreach (var prereq in Prereqs)
+			/*foreach (var prereq in Prereqs)
 			{
 				var enrolledSemester = schedule.GetEnrolledSemester(prereq);
 
-				if (enrolledSemester == null) return false;
+                if (enrolledSemester == null) return false;
 				if (enrolledSemester.SchedulePosition >= semester.SchedulePosition)
 					return false;
-			}
+			}*/
 			return true;
 		}
 

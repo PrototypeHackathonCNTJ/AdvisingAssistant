@@ -15,7 +15,7 @@ namespace AdvisingAssistant.ScheduleBuilder
             User cole = new User();
             cole.ChooseMajor("Software Engineering");
 
-            Schedule schedule = new Schedule(cole, Term.Spring);
+            Schedule schedule = new Schedule(cole, Term.Fall);
             schedule.generateOrderedCourses();
 
             for (int i = 0; i < schedule.layerOrderedCourses.Count; i++)
@@ -36,11 +36,9 @@ namespace AdvisingAssistant.ScheduleBuilder
 
         public User User { get; private set; }
 
-        private List<Course> layerOrderedCourses;
-
         public Schedule(User user, Term startingTerm)
         {
-            Semesters = new Semester[80];
+            Semesters = new Semester[8];
 
             Term term = startingTerm;
             for (int i = 0; i < Semesters.Length; i++)
@@ -52,47 +50,39 @@ namespace AdvisingAssistant.ScheduleBuilder
             User = user;
         }
 
-        public void GenerateSemesters()
+		private List<Course> scheduledCourses;
+		public void GenerateSemesters()
+		{
+			scheduledCourses = new List<Course>();
+			var courses = layerOrderedCourses.ToArray();
+			foreach (var course in courses)
+			{
+				addCourse(course, 0);
+				addProreqs(course, 0);
+			}
+		}
+        public void addCourse(Course course, int index)
         {
-            var courses = layerOrderedCourses.ToArray();
-            for (int i = 0; i < courses.Length; i++)
+            if (Semesters[index].IsFilled() || !course.Validate(Semesters[index], this, User))
             {
-                var course = courses[i];
-                addCourseToNextAvailable(course);
-                generateSemestersProreq(course);
+                addCourse(course, index + 1);
+                return;
             }
-        }
-        private void generateSemestersProreq(Course course)
-        {
-            foreach (var proreq in course.Proreqs)
-            {
-                var c = Course.GetCourseByID(proreq);
-                if (!layerOrderedCourses.Contains(c)) continue;
-                addCourseToFollowingAvailable(c);
-                generateSemestersProreq(c);
-            }
+            if (scheduledCourses.Contains(course) || !layerOrderedCourses.Contains(course))
+                return;
+            Semesters[index].AddCourse(course);
+            addProreqs(course, index);
+            scheduledCourses.Add(course);
         }
 
-        private void addCourseToNextAvailable(Course course)
-        {
-            if (!User.TakingCourse(course) || !layerOrderedCourses.Contains(course)) return;
-            Semesters[nextAvailableSemesterIndex()].AddCourse(course);
-            layerOrderedCourses.Remove(course);
-        }
-        private void addCourseToFollowingAvailable(Course course)
-        {
-            if (!User.TakingCourse(course) || !layerOrderedCourses.Contains(course)) return;
-            Semesters[nextAvailableSemesterIndex() + 1].AddCourse(course);
-            layerOrderedCourses.Remove(course);
-        }
-
-        private int nextAvailableSemesterIndex()
-        {
-            for (int i = 0; i < Semesters.Length; i++)
-                if (!Semesters[i].IsFilled())
-                    return i;
-            return -1;
-        }
+		private void addProreqs(Course course, int index)
+		{
+			foreach (var proreq in course.Proreqs)
+			{
+				var c = Course.GetCourseByID(proreq);
+				addCourse(c, index + 1);
+			}
+		}
 
         public Semester GetEnrolledSemester(string course)
         {
@@ -106,6 +96,7 @@ namespace AdvisingAssistant.ScheduleBuilder
             return null;
         }
 
+		private List<Course> layerOrderedCourses;
         private void generateOrderedCourses()
         {
             var orderedCourses = new Dictionary<int, List<Course>>();
