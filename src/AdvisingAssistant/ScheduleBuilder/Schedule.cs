@@ -9,21 +9,19 @@ namespace AdvisingAssistant.ScheduleBuilder
 {
     public class Schedule
     {
-
         public static void TestSchedule()
         {
             User cole = new User();
             cole.ChooseMajor("Software Engineering");
 
-            Schedule schedule = new Schedule(cole);
-            var order = schedule.generateOrderedCourses();
-            foreach (var pair in order)
-            {
-                Console.Write("{0}\t", pair.Key);
-                foreach (var c in pair.Value)
-                    Console.Write("{0} ", c.ID);
-                Console.WriteLine();
-            }
+            Schedule schedule = new Schedule(cole, Term.Spring);
+            schedule.generateOrderedCourses();
+
+            for (int i = 0; i < schedule.layerOrderedCourses.Length; i++)
+                Console.WriteLine(schedule.layerOrderedCourses[i].ID);
+
+            for (int i = 0; i < schedule.Semesters.Length; i++)
+                Console.WriteLine("{0} {1}", schedule.Semesters[i].SchedulePosition, schedule.Semesters[i].Term);
         }
 
         public Semester[] Semesters { get; private set; }
@@ -31,11 +29,18 @@ namespace AdvisingAssistant.ScheduleBuilder
         public User User { get; private set; }
 
         private Course[] layerOrderedCourses;
+        private Term startingTerm;
 
-        public Schedule(User user)
+        public Schedule(User user, Term startingTerm)
         {
             Semesters = new Semester[8];
-            for (int i = 1; i <= Semesters.Length; i++) Semesters[i - 1] = new Semester(this, i);
+
+            Term term = startingTerm;
+            for (int i = 0; i < Semesters.Length; i++)
+            {
+                Semesters[i] = new Semester(this, i + 1, term);
+                term = (Term)((int)term ^ 1);
+            }
 
             User = user;
         }
@@ -62,10 +67,11 @@ namespace AdvisingAssistant.ScheduleBuilder
             return null;
         }
 
-        private Dictionary<int, List<Course>> generateOrderedCourses()
+        private void generateOrderedCourses()
         {
             var orderedCourses = new Dictionary<int, List<Course>>();
             int highestLayerCount = 0;
+            int courseCount = 0;
             foreach (var course in User.ChosenCourses.Values)
             {
                 if (course == null) continue;
@@ -76,9 +82,15 @@ namespace AdvisingAssistant.ScheduleBuilder
                     orderedCourses.Add(layers, new List<Course>() { course });
                 else
                     orderedCourses[layers].Add(course);
+                courseCount++;
             }
 
-            return orderedCourses;
+            layerOrderedCourses = new Course[courseCount];
+            int layeredOrderedCoursesIndex = 0;
+            for (int i = highestLayerCount; i >= 0; i--)
+                if (orderedCourses.ContainsKey(i))
+                    foreach (var course in orderedCourses[i])
+                        layerOrderedCourses[layeredOrderedCoursesIndex++] = course;
         }
     }
 }

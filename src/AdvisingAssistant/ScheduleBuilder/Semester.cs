@@ -11,17 +11,17 @@ namespace AdvisingAssistant.ScheduleBuilder
         public Dictionary<string, Course> Courses { get; private set; }
 
         public int SchedulePosition { get; private set; }
-		public int Term { get; private set; }
+		public Term Term { get; private set; }
 		public int Year { get; private set; }
 
-        public Semester(Schedule parent, int semesterPosition)
+        public Semester(Schedule parent, int semesterPosition, Term term)
         {
             Parent = parent;
             Courses = new Dictionary<string, Course>();
 
             SchedulePosition = semesterPosition;
             Year = (semesterPosition - (semesterPosition % 2) / 2);
-            Term = (semesterPosition % 2) == 0 ? 2 : 1;
+            Term = term;
         }
 
         public void AddCourse(string name)

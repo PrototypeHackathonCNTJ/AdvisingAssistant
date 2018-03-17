@@ -1,0 +1,9 @@
+/Users/reagan/AdvisingAssistant/src/AdvisingAssistant/bin/Debug/AdvisingAssistant.exe
+/Users/reagan/AdvisingAssistant/src/AdvisingAssistant/bin/Debug/AdvisingAssistant.pdb
+/Users/reagan/AdvisingAssistant/src/AdvisingAssistant/bin/Debug/Newtonsoft.Json.dll
+/Users/reagan/AdvisingAssistant/src/AdvisingAssistant/bin/Debug/Newtonsoft.Json.xml
+/Users/reagan/AdvisingAssistant/src/AdvisingAssistant/obj/x86/Debug/AdvisingAssistant.UI.ConfigurationForm.resources
+/Users/reagan/AdvisingAssistant/src/AdvisingAssistant/obj/x86/Debug/AdvisingAssistant.csproj.GenerateResource.Cache
+/Users/reagan/AdvisingAssistant/src/AdvisingAssistant/obj/x86/Debug/AdvisingAssistant.csproj.CoreCompileInputs.cache
+/Users/reagan/AdvisingAssistant/src/AdvisingAssistant/obj/x86/Debug/AdvisingAssistant.exe
+/Users/reagan/AdvisingAssistant/src/AdvisingAssistant/obj/x86/Debug/AdvisingAssistant.pdb

@@ -54,6 +54,7 @@
     <Compile Include="User.cs" />
     <Compile Include="ScheduleBuilder\Schedule.cs" />
     <Compile Include="ScheduleBuilder\Semester.cs" />
+    <Compile Include="ScheduleBuilder\Term.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UI\ConfigurationForm.resx">
