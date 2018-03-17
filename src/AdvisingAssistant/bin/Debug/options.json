@@ -1,0 +1,20 @@
+{
+	"name":"SOFTWARE DIGITAL",
+	"credits":"8",
+	"courses":["ELECTENG 1020", "ELECTENG 1210", "ELECTENG 3770", "ELECTENG 3780"]
+}
+{
+	"name":"SOFTWARE ENG MANAGEMENT",
+	"credits":"9",
+	"courses":["INDSTENG 3430", "INDSTENG 3530", "INDSTENG 4430", "INDSTENG 4540", "INDSTENG 4730", "INDSTENG 4750"]
+}
+{
+	"name":"SOFTWARE ECON",
+	"credits":"3",
+	"courses":["ECONOMIC 2130", "ECONOMIC 2230"]
+}
+{
+	"name":"SOFTWARE COMP SCI",
+	"credits":"6",
+	"courses":["COMPUTER 3030", "COMPUTER 3520", "COMPUTER 3630", "COMPUTER 3920"]
+}
