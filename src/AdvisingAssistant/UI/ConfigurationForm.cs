@@ -63,7 +63,7 @@ namespace AdvisingAssistant.UI
             Button btn = new Button();
             String name = Course.Courses.Values.ElementAt(i).Name;
             btn.Name = "btn_" + name;
-            btn.Text = Course.Courses.Keys.ElementAt(i) + name;
+            btn.Text = Course.Courses.Keys.ElementAt(i) + "\n" + name;
 
 
             btn.BackColor = Color.White;
