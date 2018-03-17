@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
+using AdvisingAssistant.ScheduleBuilder;
+
 using Newtonsoft.Json;
 
 namespace AdvisingAssistant.Courses
@@ -82,6 +84,30 @@ namespace AdvisingAssistant.Courses
             }
 
             return highestLater + 1;
+        }
+
+        /// <summary>
+        /// Validates this course against a schedule and requested semester.
+        /// </summary>
+        /// <returns>False if the course is in the wrong term or a prereq is taken later.</returns>
+        /// <param name="semester">Semester.</param>
+        /// <param name="schedule">Schedule.</param>
+        /// <param name="user">User.</param>
+        public bool Validate(Semester semester, Schedule schedule, User user)
+        {
+            if ((semester.Term == 1 && !OfferFall) ||
+                (semester.Term == 2 && !OfferSpring))
+                return false;
+
+            foreach (var prereq in Prereqs)
+            {
+                var enrolledSemester = schedule.GetEnrolledSemester(prereq);
+
+                if (enrolledSemester == null) return false;
+                if (enrolledSemester.SchedulePosition >= semester.SchedulePosition)
+                    return false;
+            }
+            return true;
         }
 
         public static Classification[] ParseClassifications(string[] classes)

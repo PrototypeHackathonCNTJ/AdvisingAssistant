@@ -10,16 +10,18 @@ namespace AdvisingAssistant.ScheduleBuilder
         public Schedule Parent { get; private set; }
         public Dictionary<string, Course> Courses { get; private set; }
 
-        public int Year { get; private set; }
-        public int Term { get; private set; }
+        public int SchedulePosition { get; private set; }
+		public int Term { get; private set; }
+		public int Year { get; private set; }
 
-        public Semester(Schedule parent, int year, int term)
+        public Semester(Schedule parent, int semesterPosition)
         {
             Parent = parent;
             Courses = new Dictionary<string, Course>();
 
-            Year = year;
-            Term = term;
+            SchedulePosition = semesterPosition;
+            Year = (semesterPosition - (semesterPosition % 2) / 2);
+            Term = (semesterPosition % 2) == 0 ? 2 : 1;
         }
 
         public void AddCourse(string name)
@@ -30,6 +32,11 @@ namespace AdvisingAssistant.ScheduleBuilder
         {
             if (!Courses.ContainsKey(name))
                 Courses.Add(name, course);
+        }
+
+        public bool ContainsCourse(string name)
+        {
+            return Courses.ContainsKey(name);
         }
     }
 }
