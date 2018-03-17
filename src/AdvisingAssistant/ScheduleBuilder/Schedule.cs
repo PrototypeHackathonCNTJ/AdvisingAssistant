@@ -9,6 +9,8 @@ namespace AdvisingAssistant.ScheduleBuilder
 {
     public class Schedule
     {
+        public const int SEMESTER_CREDITS = 0xF;
+
         public static void TestSchedule()
         {
             User cole = new User();
@@ -47,11 +49,11 @@ namespace AdvisingAssistant.ScheduleBuilder
 
         public void GenerateSemesters()
         {
+            int layeredOrderedCoursesIndex = 0;
             for (int i = Semesters.Length - 1; i >= 0; i--)
             {
-                Semester s = Semesters[i];
-
-
+                var semester = Semesters[i];
+                //semester.AddCourse();
             }
         }
 

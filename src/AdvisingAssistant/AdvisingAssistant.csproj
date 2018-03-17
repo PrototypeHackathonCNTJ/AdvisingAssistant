@@ -45,7 +45,6 @@
     <Compile Include="UI\ConfigurationForm.Designer.cs">
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Courses\Classification.cs" />
     <Compile Include="Courses\Course.cs" />
@@ -55,6 +54,7 @@
     <Compile Include="ScheduleBuilder\Schedule.cs" />
     <Compile Include="ScheduleBuilder\Semester.cs" />
     <Compile Include="ScheduleBuilder\Term.cs" />
+    <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UI\ConfigurationForm.resx">
