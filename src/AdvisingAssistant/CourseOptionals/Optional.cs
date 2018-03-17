@@ -9,6 +9,14 @@ namespace AdvisingAssistant.CourseOptionals
 {
     public class Optional
     {
+        public static Dictionary<string, Optional> Optionals = new Dictionary<string, Optional>();
+        public static Optional GetOptionalByName(string name)
+        {
+            if (!Optionals.ContainsKey(name))
+                return null;
+            return Optionals[name];
+        }
+
         public string Name { get; private set; }
         public int Credits { get; private set; }
         public string[] Courses { get; private set; }
@@ -25,6 +33,9 @@ namespace AdvisingAssistant.CourseOptionals
 
             ChosenCourses = new List<string>();
             ChosenCredits = 0;
+
+            if (!Optionals.ContainsKey(Name))
+                Optionals.Add(Name, this);
         }
 
         public bool Choose(string course)
