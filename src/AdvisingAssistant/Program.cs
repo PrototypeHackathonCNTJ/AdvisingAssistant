@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 using System.Linq;
+using AdvisingAssistant.UI;
 
 using AdvisingAssistant.Courses;
 
@@ -13,7 +15,7 @@ namespace AdvisingAssistant.Courses
     {
         public static void Main(string[] args)
         {
-            string json = File.ReadAllText(args[0]);
+           /* string json = File.ReadAllText(args[0]);
 
             while (json.IndexOf('}') != -1)
             {
@@ -26,7 +28,8 @@ namespace AdvisingAssistant.Courses
                 Console.WriteLine(c.Credits);
                 Console.WriteLine(c.Info);
                 Console.WriteLine();
-            }
+            }*/
+         Application.Run(new ConfigurationForm());
         }
     }
 }

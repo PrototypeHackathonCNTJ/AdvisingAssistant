@@ -6,3 +6,12 @@
 /Users/reagan/AdvisingAssistant/src/AdvisingAssistant/obj/x86/Debug/AdvisingAssistant.csprojResolveAssemblyReference.cache
 /Users/reagan/AdvisingAssistant/src/AdvisingAssistant/bin/Debug/Newtonsoft.Json.dll
 /Users/reagan/AdvisingAssistant/src/AdvisingAssistant/bin/Debug/Newtonsoft.Json.xml
+C:\Users\nickl\Documents\AdvisingAssistant\src\AdvisingAssistant\obj\x86\Debug\AdvisingAssistant.exe
+C:\Users\nickl\Documents\AdvisingAssistant\src\AdvisingAssistant\obj\x86\Debug\AdvisingAssistant.pdb
+C:\Users\nickl\Documents\AdvisingAssistant\src\AdvisingAssistant\bin\Debug\AdvisingAssistant.exe
+C:\Users\nickl\Documents\AdvisingAssistant\src\AdvisingAssistant\bin\Debug\AdvisingAssistant.pdb
+C:\Users\nickl\Documents\AdvisingAssistant\src\AdvisingAssistant\bin\Debug\Newtonsoft.Json.dll
+C:\Users\nickl\Documents\AdvisingAssistant\src\AdvisingAssistant\bin\Debug\Newtonsoft.Json.xml
+C:\Users\nickl\Documents\AdvisingAssistant\src\AdvisingAssistant\obj\x86\Debug\AdvisingAssistant.csprojResolveAssemblyReference.cache
+C:\Users\nickl\Documents\AdvisingAssistant\src\AdvisingAssistant\obj\x86\Debug\AdvisingAssistant.UI.ConfigurationForm.resources
+C:\Users\nickl\Documents\AdvisingAssistant\src\AdvisingAssistant\obj\x86\Debug\AdvisingAssistant.csproj.GenerateResource.Cache
