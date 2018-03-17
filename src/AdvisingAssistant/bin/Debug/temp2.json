@@ -1,11 +1,11 @@
 {
-  "id": "COMPUTER 1130"
-  "name": "Introduction to Programming"
+  "id": "COMPUTER 1130",
+  "name": "Introduction to Programming",
   "prereqs": [ ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"An introduction to programming for students with no previous computer programming experience. Covers control structures, procedures, programming environments, and problem solving."
+  "info":"An introduction to programming for students with no previous computer programming experience. Covers control structures, procedures, programming environments, and problem solving.",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -23,7 +23,7 @@
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"A technical course in computing, algorithms, data representation, and procedural programming. Modularity and abstraction stressed in algorithm development. Style and documentation stressed in program development. Weekly lab programs engrain the syntax and semantics of C++. A few larger, out-of-class programs tie the concepts together.",
+  "info":"A class",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -35,13 +35,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 1810"
-  "name": "Microsoft Excel for Business"
+  "id": "COMPUTER 1810",
+  "name": "Microsoft Excel for Business",
   "prereqs": [ ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"This course is designed to teach students basic to advanced functionality of Microsoft Excel. An emphasis is placed on working with larger data sets. Topics covered include but are not limited to:* simple to advanced formatting* simple to advanced formulas using relative and absolute cell referencing and Excel functions* business charts and pivot tables* sort and filter techniques used with tabular data* importing and exporting datasets"
+  "info":"This course is designed to teach students basic to advanced functionality of Microsoft Excel. An emphasis is placed on working with larger data sets. Topics covered include but are not limited to:* simple to advanced formatting* simple to advanced formulas using relative and absolute cell referencing and Excel functions* business charts and pivot tables* sort and filter techniques used with tabular data* importing and exporting datasets",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -53,13 +53,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 1830"
-  "name": "Microcomputer Applications"
+  "id": "COMPUTER 1830",
+  "name": "Microcomputer Applications",
   "prereqs": [ ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"A course recommended for all non-computer science majors that need to know how to use the microcomputer. The major emphasis will be on using microcomputers with the most popular kinds of computer software used in business and education today including word processing, spreadsheets and database management. (Not open to computer science majors.)"
+  "info":"A course recommended for all non-computer science majors that need to know how to use the microcomputer. The major emphasis will be on using microcomputers with the most popular kinds of computer software used in business and education today including word processing, spreadsheets and database management. (Not open to computer science majors.)",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -71,13 +71,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 2230"
-  "name": "Programming in COBOL"
+  "id": "COMPUTER 2230",
+  "name": "Programming in COBOL",
   "prereqs": [ "COMPUTER 1430" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"To develop an understanding of, and provide practice in the use of proper strategies and techniques for business program design and development. To develop ability to apply the COBOL language to implement problem solutions. To gain the background for further study of software design and computer programming in a business environment. Emphasis on structured programming and program style."
+  "info":"To develop an understanding of, and provide practice in the use of proper strategies and techniques for business program design and development. To develop ability to apply the COBOL language to implement problem solutions. To gain the background for further study of software design and computer programming in a business environment. Emphasis on structured programming and program style.",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -89,13 +89,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 2340"
-  "name": "Programming in VB.NET"
+  "id": "COMPUTER 2340",
+  "name": "Programming in VB.NET",
   "prereqs": [ "COMPUTER 1430" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"An introduction to object-oriented programming. Emphasis on building and testing classes using software engineering techniques. Includes study of a standard class library and use of inheritance and polymorphism for building subclasses and extensibility. Coverage of the stack and queue classical data structures. Discussion of searching, sorting, and hashing techniques. Introduction to linked lists."
+  "info":"An introduction to object-oriented programming. Emphasis on building and testing classes using software engineering techniques. Includes study of a standard class library and use of inheritance and polymorphism for building subclasses and extensibility. Coverage of the stack and queue classical data structures. Discussion of searching, sorting, and hashing techniques. Introduction to linked lists.",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -107,13 +107,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 2340"
-  "name": "Object-Oriented Programming and Data Structures I"
+  "id": "COMPUTER 2340",
+  "name": "Object-Oriented Programming and Data Structures I",
   "prereqs": [ "COMPUTER 1430" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"To develop an understanding of, and provide practice in the use of proper strategies and techniques for business program design and development. To develop ability to apply the COBOL language to implement problem solutions. To gain the background for further study of software design and computer programming in a business environment. Emphasis on structured programming and program style."
+  "info":"To develop an understanding of, and provide practice in the use of proper strategies and techniques for business program design and development. To develop ability to apply the COBOL language to implement problem solutions. To gain the background for further study of software design and computer programming in a business environment. Emphasis on structured programming and program style.",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -143,13 +143,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 3030"
-  "name": "Artificial Intelligence"
+  "id": "COMPUTER 3030",
+  "name": "Artificial Intelligence",
   "prereqs": [ "COMPUTER 2630", "MATH 2730" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"A study of knowledge representation, search techniques, expert systems, predicate calculus, and natural languages. Discussion of the successes and limitations of past and current AI programs. Programming assignments in one or more AI programming languages."
+  "info":"A study of knowledge representation, search techniques, expert systems, predicate calculus, and natural languages. Discussion of the successes and limitations of past and current AI programs. Programming assignments in one or more AI programming languages.",
   "offerFall":"false",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -161,13 +161,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 3130"
-  "name": "Systems Analysis and Design"
+  "id": "COMPUTER 3130",
+  "name": "Systems Analysis and Design",
   "prereqs": [ "COMPUTER 2230" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"Provide an understanding of the duties of the systems analyst and the specific methods and techniques for system development (preliminary survey through system design) with an introduction to utilizing CASE software throughout the entire process."
+  "info":"Provide an understanding of the duties of the systems analyst and the specific methods and techniques for system development (preliminary survey through system design) with an introduction to utilizing CASE software throughout the entire process.",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -179,13 +179,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 3230"
-  "name": "Computer Architecture/Operating Systems"
+  "id": "COMPUTER 3230",
+  "name": "Computer Architecture/Operating Systems",
   "prereqs": [ "COMPUTER 2430" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"This course combines the strengths of two areas: Assembler Language Programming and Operating Systems. The major areas of Assembler such as Architecture, Data Types, Logic and Control and Interrupts will be covered. The major areas of Operating Systems including Processes, Mutual Exclusion, Critical Sections, Parallel Processing, Real and Virtual Storage and Job Scheduling will be emphasized."
+  "info":"This course combines the strengths of two areas: Assembler Language Programming and Operating Systems. The major areas of Assembler such as Architecture, Data Types, Logic and Control and Interrupts will be covered. The major areas of Operating Systems including Processes, Mutual Exclusion, Critical Sections, Parallel Processing, Real and Virtual Storage and Job Scheduling will be emphasized.",
   "offerFall":"false",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -197,13 +197,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 3340"
-  "name": "Windows Programming"
+  "id": "COMPUTER 3340",
+  "name": "Windows Programming",
   "prereqs": [ "COMPUTER 2630" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"A study of programming language topics which include data objects, data types, storage management, syntax, BNF descriptions, semantics, lexical analysis and parsing. Examples taken from traditional languages as well as more modern languages."
+  "info":"A study of programming language topics which include data objects, data types, storage management, syntax, BNF descriptions, semantics, lexical analysis and parsing. Examples taken from traditional languages as well as more modern languages.",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -215,13 +215,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 3520"
-  "name": "Programming Language Structures"
+  "id": "COMPUTER 3520",
+  "name": "Programming Language Structures",
   "prereqs": [ "COMPUTER 2630" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"A study of programming language topics which include data objects, data types, storage management, syntax, BNF descriptions, semantics, lexical analysis and parsing. Examples taken from traditional languages as well as more modern languages."
+  "info":"A study of programming language topics which include data objects, data types, storage management, syntax, BNF descriptions, semantics, lexical analysis and parsing. Examples taken from traditional languages as well as more modern languages.",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -233,13 +233,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 3530"
-  "name": "Systems Development and Implementation"
+  "id": "COMPUTER 3530",
+  "name": "Systems Development and Implementation",
   "prereqs": [ "COMPUTER 3130" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"Strategies and techniques of analysis and design for producing logical methodologies for dealing with complexity in the development and implementation of information systems. Use of software tools, file access methods and operating system facilities."
+  "info":"Strategies and techniques of analysis and design for producing logical methodologies for dealing with complexity in the development and implementation of information systems. Use of software tools, file access methods and operating system facilities.",
   "offerFall":"false",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -251,13 +251,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 3830"
-  "name": "Database Design and Implementation"
+  "id": "COMPUTER 3830",
+  "name": "Database Design and Implementation",
   "prereqs": [ "COMPUTER 2430", "MATH 2730" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"This course will explore fundamental concepts necessary for the design, use, and implementation of database systems. Study of database modeling and design, languages and facilities provided by the database management systems, and techniques for implementing database systems will be examined. Major database models will be discussed with primary focus on the relational database model and query languages."
+  "info":"This course will explore fundamental concepts necessary for the design, use, and implementation of database systems. Study of database modeling and design, languages and facilities provided by the database management systems, and techniques for implementing database systems will be examined. Major database models will be discussed with primary focus on the relational database model and query languages.",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -269,13 +269,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 3840"
-  "name": "Introduction to Computer Security "
+  "id": "COMPUTER 3840",
+  "name": "Introduction to Computer Security",
   "prereqs": [ "COMPUTER 2430" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"An introduction to the principles of computer security. Topics include computer and system security, authentication, access control, malicious software, and software security. The course also examines how system designs, network protocols, and software engineering practices can result in vulnerabilities. The course explores how to design and implement systems to mitigate vulnerabilities. In addition, the course explores how to detect and mitigate vulnerabilities in existing systems."
+  "info":"An introduction to the principles of computer security. Topics include computer and system security, authentication, access control, malicious software, and software security. The course also examines how system designs, network protocols, and software engineering practices can result in vulnerabilities. The course explores how to design and implement systems to mitigate vulnerabilities. In addition, the course explores how to detect and mitigate vulnerabilities in existing systems.",
   "offerFall":"false",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -287,13 +287,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 3870"
-  "name": "Web Protocols, Technologies and Applications"
+  "id": "COMPUTER 3870",
+  "name": "Web Protocols, Technologies and Applications",
   "prereqs": [ "COMPUTER 3340" ],
   "coreqs": [ "COMPUTER 3630" ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"The course will introduce the students to Protocols and Technologies in Web applications. The Client/Server concept and some advanced database concepts will also be covered. The emphasis of the course will be using tools such as ASP.NET for rapid development of Web Applications and Web Services. JavaScript and C# will also be employed."
+  "info":"The course will introduce the students to Protocols and Technologies in Web applications. The Client/Server concept and some advanced database concepts will also be covered. The emphasis of the course will be using tools such as ASP.NET for rapid development of Web Applications and Web Services. JavaScript and C# will also be employed.",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -305,13 +305,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 3920"
-  "name": "Computer Graphics"
+  "id": "COMPUTER 3920",
+  "name": "Computer Graphics",
   "prereqs": [ "COMPUTER 3340", "MATH 2640" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"An introduction to computer graphics including transformations; modeling; viewing and projection; color, lighting and shading; texture mapping; interaction; and animation. Use of a pipeline-based graphics library such as OpenGL. Several programming assignments, including some games-based projects."
+  "info":"An introduction to computer graphics including transformations; modeling; viewing and projection; color, lighting and shading; texture mapping; interaction; and animation. Use of a pipeline-based graphics library such as OpenGL. Several programming assignments, including some games-based projects.",
   "offerFall":"false",
   "offerFallOdd":"true",
   "offerFallEven":"false",
@@ -323,13 +323,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 4110"
-  "name": "Seminar"
+  "id": "COMPUTER 4110",
+  "name": "Seminar",
   "prereqs": [ ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"1",
-  "info":"The course consists of lectures/discussions presented by both computer science faculty and students enrolled in the class."
+  "info":"The course consists of lectures/discussions presented by both computer science faculty and students enrolled in the class.",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",
@@ -341,13 +341,13 @@
   "classification" : [ ]
 }
 {
-  "id": "COMPUTER 4230"
-  "name": "Applications in Information Systems"
+  "id": "COMPUTER 4230",
+  "name": "Applications in Information Systems",
   "prereqs": [ "COMPUTER 3530" ],
   "coreqs": [ ],
   "prereqStanding":"",
   "credits":"3",
-  "info":"Applications of computer programming and system development concepts, principles and practices to a comprehensive system development project. A team approach is used to design and develop a realistic system of moderate complexity. Also includes coverage of advanced features of the COBOL language."
+  "info":"Applications of computer programming and system development concepts, principles and practices to a comprehensive system development project. A team approach is used to design and develop a realistic system of moderate complexity. Also includes coverage of advanced features of the COBOL language.",
   "offerFall":"true",
   "offerFallOdd":"false",
   "offerFallEven":"false",

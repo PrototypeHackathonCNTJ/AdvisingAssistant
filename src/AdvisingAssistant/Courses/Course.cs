@@ -43,6 +43,9 @@ namespace AdvisingAssistant.Courses
             OfferSummer = json.offerSummer;
             OfferWinter = json.offerWinter;
             Classifications = ParseClassifications(json.classification.ToObject<string[]>());
+
+            if (!Courses.ContainsKey(ID))
+                Courses.Add(ID, this);
         }
 
         public static Classification[] ParseClassifications(string[] classes)
