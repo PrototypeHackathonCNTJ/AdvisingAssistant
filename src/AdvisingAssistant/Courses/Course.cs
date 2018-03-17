@@ -4,18 +4,39 @@ using System.IO;
 using AdvisingAssistant.ScheduleBuilder;
 
 using Newtonsoft.Json;
+using System;
 
 namespace AdvisingAssistant.Courses
 {
     public class Course
     {
         public static Dictionary<string, Course> Courses = new Dictionary<string, Course>();
+
+      public static void TestCourses()
+      {
+         foreach (var crs in Courses.Values)
+         {
+            Console.Write("{0}\tProreqs ({1}):", crs.ID, crs.Proreqs.Count);
+            foreach (var proreq in crs.Proreqs)
+               Console.Write("\t{0}", proreq);
+            Console.WriteLine();
+         }
+      }
+
         public static Course GetCourseByID(string name)
         {
             if (!Courses.ContainsKey(name))
                 return null;
             return Courses[name];
         }
+
+      public static void AssignProreqs()
+      {
+         foreach(var crs in Courses.Values)
+            foreach(string crsName in crs.Prereqs)
+               if(Course.GetCourseByID(crsName) != null)
+                  Course.GetCourseByID(crsName).Proreqs.Add(crs.ID);
+      }
 
         public static void ReadCoursesFromFile(string path)
         {
@@ -30,8 +51,10 @@ namespace AdvisingAssistant.Courses
                 if (!Courses.ContainsKey(c.Name))
                     Courses.Add(c.ID, c);
 			}
+         Course.AssignProreqs();
         }
 
+        public List<string> Proreqs { get; private set; }
         public string ID { get; private set; }
         public string Name { get; private set; }
         public string[] Prereqs { get; private set; }
@@ -67,6 +90,8 @@ namespace AdvisingAssistant.Courses
             OfferSummer = json.offerSummer;
             OfferWinter = json.offerWinter;
             Classifications = ParseClassifications(json.classification.ToObject<string[]>());
+
+            Proreqs = new List<string>();
         }
 
         public int GetPrereqLayers()
