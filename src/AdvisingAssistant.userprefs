@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{BF85F936-B6B4-4937-9D03-D3747BA0ADD9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="AdvisingAssistant/Courses/Course.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AdvisingAssistant/ScheduleBuilder/Schedule.cs">
     <Files>
       <File FileName="AdvisingAssistant/Program.cs" Line="14" Column="53" />
-      <File FileName="AdvisingAssistant/ScheduleBuilder/Schedule.cs" Line="66" Column="95" />
       <File FileName="AdvisingAssistant/CourseOptionals/Optional.cs" Line="37" Column="27" />
       <File FileName="AdvisingAssistant/Courses/Course.cs" Line="125" Column="4" />
       <File FileName="AdvisingAssistant/User.cs" Line="23" Column="10" />
+      <File FileName="AdvisingAssistant/ScheduleBuilder/Schedule.cs" Line="41" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />

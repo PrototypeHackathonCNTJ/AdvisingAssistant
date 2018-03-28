@@ -51,10 +51,10 @@
     <Compile Include="Majors\Major.cs" />
     <Compile Include="CourseOptionals\Optional.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="UI\ScheduleBuilder\Schedule.cs" />
-    <Compile Include="UI\ScheduleBuilder\Semester.cs" />
-    <Compile Include="UI\ScheduleBuilder\Term.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ScheduleBuilder\Schedule.cs" />
+    <Compile Include="ScheduleBuilder\Semester.cs" />
+    <Compile Include="ScheduleBuilder\Term.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UI\ConfigurationForm.resx">
@@ -63,6 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ScheduleBuilder\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
