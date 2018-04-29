@@ -106,6 +106,7 @@ namespace AdvisingAssistant.Courses
 			foreach (var prereq in Prereqs)
 			{
 				Course c = GetCourseByID(prereq);
+            if (c == null) return 1;
 				int subLayers = c.GetPrereqLayers();
 				if (highestLater < subLayers)
 					highestLater = subLayers;
@@ -121,7 +122,7 @@ namespace AdvisingAssistant.Courses
 		/// <param name="semester">Semester.</param>
 		/// <param name="schedule">Schedule.</param>
 		/// <param name="user">User.</param>
-		public bool Validate(Semester semester, Schedule schedule, User user)
+		public bool Validate(Semester semester, Schedule schedule)
 		{
 			/*foreach (var prereq in Prereqs)
 			{

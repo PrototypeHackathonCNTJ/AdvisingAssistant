@@ -50,6 +50,7 @@
     <Compile Include="Courses\Course.cs" />
     <Compile Include="Majors\Major.cs" />
     <Compile Include="CourseOptionals\Optional.cs" />
+    <Compile Include="UI\TUI.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ScheduleBuilder\Schedule.cs" />
@@ -64,8 +65,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ScheduleBuilder\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
